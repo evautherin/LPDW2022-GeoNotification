@@ -13,15 +13,26 @@ struct GeofencingView: View {
     
     var body: some View {
         VStack{
-            ZStack {
-                Map(coordinateRegion: $model.notificationCoordinateRegion)
-                Circle()
-                    .strokeBorder(Color.white, lineWidth: 3)
-                    .frame(width: 22.0, height: 22.0)
-                Rectangle()
-                    .frame(width: 22, height: 2, alignment: .center)
-                Rectangle()
-                    .frame(width: 2, height: 22, alignment: .center)
+            ZStack(alignment: .topTrailing) {
+                ZStack {
+                    Map(coordinateRegion: $model.notificationCoordinateRegion)
+                    Circle()
+                        .strokeBorder(Color.white, lineWidth: 3)
+                        .frame(width: 22.0, height: 22.0)
+                    Rectangle()
+                        .frame(width: 22, height: 2, alignment: .center)
+                    Rectangle()
+                        .frame(width: 2, height: 22, alignment: .center)
+                }
+                
+                Button {
+                    model.isEditing = false
+                } label: {
+                    Image(systemName: "xmark.circle")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+
             }
             TextField("Name of your region", text: $model.name)
             Text("Meter: \(Int(model.meter))")
