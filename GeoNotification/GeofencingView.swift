@@ -29,7 +29,7 @@ struct GeofencingView: View {
             }
             TextField("Name of your region", text: $model.name)
             Text("Meter: \(Int(model.meter))")
-            Slider(value: $model.meter, in: 100...10000, step: 100)
+            Slider(value: $model.meter, in: 50...250, step: 10)
         }
         .padding()
         .onDisappear(perform: {
