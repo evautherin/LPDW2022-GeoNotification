@@ -41,8 +41,15 @@ struct GeofencingView: View {
         .padding()
         .onAppear(perform: {
             model.synchronizeNotificationMap()
+            NotificationCenterDelegate.requestAuthorization()
         })
         .onDisappear(perform: {
+            let region = CLCircularRegion(
+                center: model.notificationCoordinateRegion.center,
+                radius: model.meter,
+                identifier: model.name
+            )
+            NotificationCenterDelegate.regionNotify(region: region)
         })
     }
 }
