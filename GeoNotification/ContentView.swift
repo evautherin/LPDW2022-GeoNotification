@@ -20,13 +20,6 @@ struct ContentView: View {
                     showsUserLocation: true,
                     userTrackingMode: .constant(.follow)
                 )
-                .onAppear(perform: {
-                    CLLocationManager().requestWhenInUseAuthorization()
-                })
-                .sheet(isPresented: $isEditing) {
-                    GeofencingView(model: model)
-                }
-
             
                 Button {
                     isEditing = true
@@ -36,6 +29,12 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
+        }
+        .onAppear(perform: {
+            CLLocationManager().requestWhenInUseAuthorization()
+        })
+        .sheet(isPresented: $isEditing) {
+            GeofencingView(model: model)
         }
     }
 }
