@@ -26,6 +26,7 @@ class ViewModel: ObservableObject {
     @Published var meter = 150.0
     
     func synchronizeNotificationMap() {
-        notificationCoordinateRegion = userCoordinateRegion
+        print("userCoordinateRegion.center: \(userCoordinateRegion.center)")
+        notificationCoordinateRegion.center = userCoordinateRegion.center
     }
 }

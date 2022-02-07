@@ -9,11 +9,7 @@ import SwiftUI
 import MapKit
 
 struct GeofencingView: View {
-    @StateObject var model = ViewModel()
-        
-    init(model: ViewModel) {
-        model.synchronizeNotificationMap()
-    }
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         VStack{
@@ -32,6 +28,9 @@ struct GeofencingView: View {
             Slider(value: $model.meter, in: 50...250, step: 10)
         }
         .padding()
+        .onAppear(perform: {
+            model.synchronizeNotificationMap()
+        })
         .onDisappear(perform: {
         })
     }

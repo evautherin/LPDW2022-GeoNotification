@@ -22,6 +22,7 @@ struct ContentView: View {
                 )
             
                 Button {
+//                    print("userCoordinateRegion.center: \(model.userCoordinateRegion.center)")
                     isEditing = true
                 } label: {
 //                    Image(systemName: isEditing ? "xmark.circle" : "circle.dashed")
