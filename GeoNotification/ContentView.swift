@@ -11,15 +11,32 @@ import CoreLocation
 
 struct ContentView: View {
     @StateObject var model = ViewModel()
+    @State var isEditing = false
     
     var body: some View {
-        Map(
-            coordinateRegion: $model.userCoordinateRegion,
-            showsUserLocation: true,
-            userTrackingMode: .constant(.follow)
-        ).onAppear(perform: {
-            CLLocationManager().requestWhenInUseAuthorization()
-        })
+        ZStack(alignment: .topTrailing) {
+                Map(
+                    coordinateRegion: $model.userCoordinateRegion,
+                    showsUserLocation: true,
+                    userTrackingMode: .constant(.follow)
+                )
+                .onAppear(perform: {
+                    CLLocationManager().requestWhenInUseAuthorization()
+                })
+                .sheet(isPresented: $isEditing) {
+                    GeofencingView(model: model)
+                }
+
+            
+                Button {
+                    isEditing = true
+                } label: {
+//                    Image(systemName: isEditing ? "xmark.circle" : "circle.dashed")
+                    Image(systemName: "circle.dashed")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+        }
     }
 }
 
