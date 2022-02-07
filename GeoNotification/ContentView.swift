@@ -6,11 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
+import CoreLocation
 
 struct ContentView: View {
+    @StateObject var model = ViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Map(
+            coordinateRegion: $model.userCoordinateRegion,
+            showsUserLocation: true,
+            userTrackingMode: .constant(.follow)
+        ).onAppear(perform: {
+            CLLocationManager().requestWhenInUseAuthorization()
+        })
     }
 }
 
