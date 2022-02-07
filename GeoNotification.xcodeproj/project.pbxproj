@@ -11,6 +11,9 @@
 		8F6693D127B11DFE005D3BC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6693D027B11DFE005D3BC0 /* ContentView.swift */; };
 		8F6693D327B11E03005D3BC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6693D227B11E03005D3BC0 /* Assets.xcassets */; };
 		8F6693D627B11E03005D3BC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6693D527B11E03005D3BC0 /* Preview Assets.xcassets */; };
+		8F6693DD27B11E57005D3BC0 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6693DC27B11E57005D3BC0 /* NotificationCenterDelegate.swift */; };
+		8F6693DF27B11E89005D3BC0 /* GeofencingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6693DE27B11E89005D3BC0 /* GeofencingView.swift */; };
+		8F6693E127B11EA0005D3BC0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6693E027B11EA0005D3BC0 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		8F6693D027B11DFE005D3BC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F6693D227B11E03005D3BC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F6693D527B11E03005D3BC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F6693DC27B11E57005D3BC0 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
+		8F6693DE27B11E89005D3BC0 /* GeofencingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeofencingView.swift; sourceTree = "<group>"; };
+		8F6693E027B11EA0005D3BC0 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				8F6693CE27B11DFE005D3BC0 /* GeoNotificationApp.swift */,
 				8F6693D027B11DFE005D3BC0 /* ContentView.swift */,
+				8F6693E027B11EA0005D3BC0 /* ViewModel.swift */,
+				8F6693DE27B11E89005D3BC0 /* GeofencingView.swift */,
+				8F6693DC27B11E57005D3BC0 /* NotificationCenterDelegate.swift */,
 				8F6693D227B11E03005D3BC0 /* Assets.xcassets */,
 				8F6693D427B11E03005D3BC0 /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6693E127B11EA0005D3BC0 /* ViewModel.swift in Sources */,
 				8F6693D127B11DFE005D3BC0 /* ContentView.swift in Sources */,
+				8F6693DD27B11E57005D3BC0 /* NotificationCenterDelegate.swift in Sources */,
 				8F6693CF27B11DFE005D3BC0 /* GeoNotificationApp.swift in Sources */,
+				8F6693DF27B11E89005D3BC0 /* GeofencingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
