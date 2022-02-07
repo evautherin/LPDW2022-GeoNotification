@@ -54,7 +54,7 @@ extension NotificationCenterDelegate: UNUserNotificationCenterDelegate {
         
         let requestEnter = UNNotificationRequest(identifier: "Enter", content: contentEnter, trigger: triggerEnter)
         notificationCenter.add(requestEnter) { error in
-            print("regionNotify: \(region)")
+            print("regionNotify enter: \(region)")
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
@@ -70,10 +70,14 @@ extension NotificationCenterDelegate: UNUserNotificationCenterDelegate {
         
         let requestExit = UNNotificationRequest(identifier: "Exit", content: contentExit, trigger: triggerExit)
         notificationCenter.add(requestExit) { error in
-            print("regionNotify: \(region)")
+            print("regionNotify exit: \(region)")
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
+        }
+        
+        notificationCenter.getPendingNotificationRequests { requests in
+            print("NotificationRequests: \(requests)")
         }
     }
 
