@@ -19,11 +19,6 @@ class NotificationCenterDelegate: NSObject {
         UNUserNotificationCenter.current().delegate = self
     }
     
-}
-
-
-extension NotificationCenterDelegate: UNUserNotificationCenterDelegate {
-    
     class func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             
@@ -93,6 +88,10 @@ extension NotificationCenterDelegate: UNUserNotificationCenterDelegate {
             }
         }
     }
+}
+
+
+extension NotificationCenterDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
